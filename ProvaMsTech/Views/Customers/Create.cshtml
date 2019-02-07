@@ -1,0 +1,85 @@
+﻿@model ProvaMsTech.Models.Customers
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/Create.js")
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="panel-body">
+            <div class="container">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="row">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" id="txtCompanyName" class="form-control" placeholder="CompanyName" />
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" id="txtEmail" class="form-control" placeholder="E-mail" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" id="txtContactName" class="form-control" placeholder="ContactName" />
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" id="txtContactTitle" class="form-control" placeholder="ContactTitle" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" id="txtAddress" class="form-control" placeholder="Address" />
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" id="txtCity" class="form-control" placeholder="City" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" id="txtRegion" class="form-control" placeholder="Region" />
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" id="txtPostalCode" class="form-control" placeholder="PostalCode" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" id="txtCountry" class="form-control" placeholder="Country" />
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" id="txtPhone" class="form-control" placeholder="Phone" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" id="txtFax" class="form-control" placeholder="Fax" />
+                        </div>
+                        <div class="col-md-6">
+                            <input type="submit" value="Salvar" id="btnSalvar" class="btn btn-default" />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Voltar", "Index")
+    </div>
+</body>
+</html>

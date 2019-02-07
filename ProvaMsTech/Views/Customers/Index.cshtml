@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ProvaMsTech.Models.Customers>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista</h2>
+
+<p> 
+    @Html.ActionLink("Novo", "Create")
+</p>
+<div class="table-responsive">
+    <table class="table">
+        <tr class="row">
+            <th class="col">
+                @Html.DisplayNameFor(model => model.CustomerID)
+            </th>
+            <th class="col">
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </th>
+            <th class="col">
+                @Html.DisplayNameFor(model => model.ContactTitle)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr class="row">
+                <td class="col">
+                    @Html.DisplayFor(modelItem => item.CustomerID)
+                </td>
+                <td class="col">
+                    @Html.DisplayFor(modelItem => item.CompanyName)
+                </td>
+                <td class="col">
+                    @Html.DisplayFor(modelItem => item.ContactTitle)
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>
